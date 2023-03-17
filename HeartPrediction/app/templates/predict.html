@@ -22,13 +22,18 @@
                                         <option value="0">Female</option>
                                     </select>
                                     <label for="">Chest Pain Type</label>
-                                    <input type="text" name="chest_pain_type"
-                                    placeholder="Enter Type of Chect Pain" class="form-control input-sm"
-                                    value="{{ request.form['chest_pain_type'] }}"></input>
+                                    <select name="chest_pain_type" class="form-control input-sm">
+                                        <option value="0">Chest pain from physical activity</option>
+                                        <option value="1">Squeezing or tightness in your chest</option>
+                                        <option value="3">Mild Pain, not always on left side of chest</option>
+                                        <option value="3">No Chest Pain</option>
+                                    </select>
                                     <label for="">Resting ECG</label>
-                                    <input type="text" name="resting_ecg"
-                                    placeholder="Enter Resting ECG" class="form-control input-sm"
-                                    value="{{ request.form['resting_ecg'] }}"></input>
+                                    <select name="resting_ecg" class="form-control input-sm">
+                                        <option value="0">Normal</option>
+                                        <option value="1">Abnormal</option>
+                                        <option value="2">Probable LVH</option>
+                                    </select>
                                     <label for="">Max Heart Rate</label>
                                     <input type="text" name="max_heart_rate"
                                     placeholder="Enter Max Heart Rate" class="form-control input-sm"
@@ -38,9 +43,11 @@
                                     placeholder="Enter ST Depression" class="form-control input-sm"
                                     value="{{ request.form['st_depression'] }}"></input>
                                     <label for="">ST Slope</label>
-                                    <input type="text" name="st_slope"
-                                    placeholder="Enter ST Slope" class="form-control input-sm"
-                                    value="{{ request.form['st_slope'] }}"></input>
+                                    <select name="st_slope" class="form-control input-sm">
+                                        <option value="0">Up Slope</option>
+                                        <option value="1">Down Slope</option>
+                                        <option value="2">Horizontal</option>
+                                    </select>
                                 </div>
                                 
                             </div>
