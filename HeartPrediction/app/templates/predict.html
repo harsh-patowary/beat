@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+    {% block content %}
+    <h1>{% block title %} beat it {% endblock %}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="">
+  
+                    <div class="card-body">
+                        <form class="container" method="post">
+                            <div class="form-group">
+                                
+                                <div class="col-xs-2">
+                                    <label for="">Age</label>
+                                    <input type="text" name="age"
+                                    placeholder="Enter Age" class="form-control input-sm"
+                                    value="{{ request.form['age'] }}"></input>
+                                    <label for="">Sex</label>
+                                    <input type="text" name="sex"
+                                    placeholder="Enter Sex" class="form-control input-sm"
+                                    value="{{ request.form['sex'] }}"></input>
+                                    <label for="">Chest Pain Type</label>
+                                    <input type="text" name="chest_pain_type"
+                                    placeholder="Enter Type of Chect Pain" class="form-control input-sm"
+                                    value="{{ request.form['chest_pain_type'] }}"></input>
+                                    <label for="">Resting ECG</label>
+                                    <input type="text" name="resting_ecg"
+                                    placeholder="Enter Resting ECG" class="form-control input-sm"
+                                    value="{{ request.form['resting_ecg'] }}"></input>
+                                    <label for="">Max Heart Rate</label>
+                                    <input type="text" name="max_heart_rate"
+                                    placeholder="Enter Max Heart Rate" class="form-control input-sm"
+                                    value="{{ request.form['max_heart_rate'] }}"></input>
+                                    <label for="">ST Depression</label>
+                                    <input type="text" name="st_depression"
+                                    placeholder="Enter ST Depression" class="form-control input-sm"
+                                    value="{{ request.form['st_depression'] }}"></input>
+                                    <label for="">ST Slope</label>
+                                    <input type="text" name="st_slope"
+                                    placeholder="Enter ST Slope" class="form-control input-sm"
+                                    value="{{ request.form['st_slope'] }}"></input>
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="">
+  
+                    <div class="card-body">
+                        <div class="container text-center">
+                            <h3>Disease Probability {{ condition }}</h3>
+                            <h5>Accuracy: 85%</h5>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container image-box h-100">
+            
+            <div class="container-tablet center card border-0 p-3 shadow-sm text-center">
+                <img id="image" src={{ img_url }} alt="" class="center" />
+                <label for="description">{{ desc }}</label>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
