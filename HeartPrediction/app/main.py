@@ -31,11 +31,11 @@ def predict():
     if request.method == 'POST':
         age = request.form['age']
         sex = request.form.get("sex")
-        cpt = request.form['chest_pain_type']
-        r_ecg = request.form['resting_ecg']
+        cpt = request.form.get['chest_pain_type']
+        r_ecg = request.form.get['resting_ecg']
         mhr = request.form['max_heart_rate']
         st_depr = request.form['st_depression']
-        st_slope = request.form['st_slope']
+        st_slope = request.form.get['st_slope']
         passed_data = svm(age, sex, cpt, r_ecg, mhr, st_depr, st_slope)
         return render_template('predict.html', condition=passed_data)
     
