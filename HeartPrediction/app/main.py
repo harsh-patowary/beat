@@ -30,7 +30,7 @@ def index():
 def predict():
     if request.method == 'POST':
         age = request.form['age']
-        sex = request.form['sex']
+        sex = request.form.get("sex")
         cpt = request.form['chest_pain_type']
         r_ecg = request.form['resting_ecg']
         mhr = request.form['max_heart_rate']

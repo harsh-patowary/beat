@@ -17,9 +17,10 @@
                                     placeholder="Enter Age" class="form-control input-sm"
                                     value="{{ request.form['age'] }}"></input>
                                     <label for="">Sex</label>
-                                    <input type="text" name="sex"
-                                    placeholder="Enter Sex" class="form-control input-sm"
-                                    value="{{ request.form['sex'] }}"></input>
+                                    <select name="sex" class="form-control input-sm">
+                                        <option value="1">Male</option>
+                                        <option value="0">Female</option>
+                                    </select>
                                     <label for="">Chest Pain Type</label>
                                     <input type="text" name="chest_pain_type"
                                     placeholder="Enter Type of Chect Pain" class="form-control input-sm"
