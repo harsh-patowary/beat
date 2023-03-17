@@ -1,49 +1,55 @@
+{% block title %}beat watch companion app{% endblock %}
 {% extends "base.html" %}
     {% block content %}
-    <h1>{% block title %} beat it {% endblock %}</h1>
+    <div>
+        <h1>beat watch companion app<br><small>beat it!</small></h1>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <div class="card">
-                    <img class="card-img-top" src="" alt="">
   
                     <div class="card-body">
                         <form class="container" method="post">
                             <div class="form-group">
                                 
                                 <div class="col-xs-2">
-                                    <label for="">Age</label>
+                                    <label for="" class="mb-0 mt-2">Age</label>
                                     <input type="text" name="age"
                                     placeholder="Enter Age" class="form-control input-sm"
-                                    value="{{ request.form['age'] }}"></input>
-                                    <label for="">Sex</label>
-                                    <select name="sex" class="form-control input-sm">
+                                    value="{{ request.form['age'] }}" required></input>
+                                    <label for="" class="mb-0 mt-2">Sex</label>
+                                    <select name="sex" class="form-control input-sm" required>
+                                        <option value="">Please select an option</option>
                                         <option value="1">Male</option>
                                         <option value="0">Female</option>
                                     </select>
-                                    <label for="">Chest Pain Type</label>
-                                    <select name="chest_pain_type" class="form-control input-sm">
+                                    <label for="" class="mb-0 mt-2">Chest Pain Type</label>
+                                    <select name="chest_pain_type" class="form-control input-sm" required>
+                                        <option value="">Please select an option</option>
                                         <option value="0">Chest pain from physical activity</option>
                                         <option value="1">Squeezing or tightness in your chest</option>
                                         <option value="3">Mild Pain, not always on left side of chest</option>
                                         <option value="3">No Chest Pain</option>
                                     </select>
-                                    <label for="">Resting ECG</label>
-                                    <select name="resting_ecg" class="form-control input-sm">
+                                    <label for="" class="mb-0 mt-2">Resting ECG</label>
+                                    <select name="resting_ecg" class="form-control input-sm" required>
+                                        <option value="">Please select an option</option>
                                         <option value="0">Normal</option>
                                         <option value="1">Abnormal</option>
                                         <option value="2">Probable LVH</option>
                                     </select>
-                                    <label for="">Max Heart Rate</label>
+                                    <label for="" class="mb-0 mt-2">Max Heart Rate</label>
                                     <input type="text" name="max_heart_rate"
                                     placeholder="Enter Max Heart Rate" class="form-control input-sm"
-                                    value="{{ request.form['max_heart_rate'] }}"></input>
-                                    <label for="">ST Depression</label>
+                                    value="{{ request.form['max_heart_rate'] }}" required></input>
+                                    <label for="" class="mb-0 mt-2">ST Depression</label>
                                     <input type="text" name="st_depression"
                                     placeholder="Enter ST Depression" class="form-control input-sm"
-                                    value="{{ request.form['st_depression'] }}"></input>
-                                    <label for="">ST Slope</label>
-                                    <select name="st_slope" class="form-control input-sm">
+                                    value="{{ request.form['st_depression'] }}" required></input>
+                                    <label for="" class="mb-0 mt-2">ST Slope</label>
+                                    <select name="st_slope" class="form-control input-sm" required>
+                                        <option value="">Please select an option</option>
                                         <option value="0">Up Slope</option>
                                         <option value="1">Down Slope</option>
                                         <option value="2">Horizontal</option>
@@ -60,27 +66,20 @@
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="card">
-                    <img class="card-img-top" src="" alt="">
   
                     <div class="card-body">
                         <div class="container text-center">
-                            <h3>Disease Probability {{ condition }}</h3>
+                            <h3>Disease Probability</h3>
+                            {% if condition == "1" %}
+                            <h4 class="text-danger">It is advisable you visit your healthcare professional as soon as possible, as you may have a Cardiovascualar Disease.</h4>
+                            {% elif condition == "0" %}
+                            <h4 class="text-success">Your heart is top notch brother.</h4>
+                            {% endif %}
                             <h5>Accuracy: 85%</h5>
-                            
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section>
-        <div class="container image-box h-100">
-            
-            <div class="container-tablet center card border-0 p-3 shadow-sm text-center">
-                <img id="image" src={{ img_url }} alt="" class="center" />
-                <label for="description">{{ desc }}</label>
-            </div>
-        </div>
-    </section>
     {% endblock %}
